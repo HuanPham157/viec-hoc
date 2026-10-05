@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100%;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary": "#ffffff", "surface-container-lowest": "#ffffff", "secondary-fixed-dim": "#4edea3", "surface-container-highest": "#d3e4fe", "surface": "#f8f9ff", "on-tertiary-fixed-variant": "#653e00", "on-secondary-container": "#00714d", "inverse-primary": "#b4c5ff", "outline-variant": "#c3c6d7", "on-background": "#0b1c30", "on-secondary-fixed-variant": "#005236", "on-primary-container": "#eeefff", "on-tertiary": "#ffffff", "on-secondary": "#ffffff", "surface-bright": "#f8f9ff", "on-error": "#ffffff", "on-surface-variant": "#434655", "surface-container-high": "#dce9ff", "surface-variant": "#d3e4fe", "primary": "#004ac6", "secondary-fixed": "#6ffbbe", "inverse-surface": "#213145", "background": "#f8f9ff", "on-primary-fixed": "#00174b", "on-primary-fixed-variant": "#003ea8", "outline": "#737686", "error": "#ba1a1a", "primary-container": "#2563eb", "error-container": "#ffdad6", "secondary": "#006c49", "on-secondary-fixed": "#002113", "tertiary-fixed": "#ffddb8", "secondary-container": "#6cf8bb", "primary-fixed": "#dbe1ff", "inverse-on-surface": "#eaf1ff", "surface-container-low": "#eff4ff", "surface-container": "#e5eeff", "primary-fixed-dim": "#b4c5ff", "surface-tint": "#0053db", "tertiary-fixed-dim": "#ffb95f", "on-error-container": "#93000a", "tertiary": "#784b00", "tertiary-container": "#996100", "on-surface": "#0b1c30", "on-tertiary-fixed": "#2a1700", "surface-dim": "#cbdbf5", "on-tertiary-container": "#ffeedd" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1rem", "space-lg": "1.5rem", "space-md": "1rem", "gutter-desktop": "1.5rem", "space-xl": "2rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "margin-desktop": "2rem", "margin": "1rem", "margin-tablet": "1.5rem" }, "fontFamily": { "body-sm": ["Be Vietnam Pro"], "body-md": ["Be Vietnam Pro"], "headline-md": ["Be Vietnam Pro"], "headline-lg": ["Be Vietnam Pro"], "body-lg": ["Be Vietnam Pro"], "label-sm": ["Be Vietnam Pro"], "label-md": ["Be Vietnam Pro"], "label-lg": ["Be Vietnam Pro"], "display": ["Be Vietnam Pro"], "display-mobile": ["Be Vietnam Pro"], "headline-lg-mobile": ["Be Vietnam Pro"] }, "fontSize": { "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-md": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "display-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-lg-mobile": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-14 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm min-w-0"><img alt="Logo Việc học của tôi" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1VuHxFgCy0zVqnhSlGSspAgkDCTRX0ufmiIS8mR0D_wZHJ6Z82zYbjdvsD_xbFlKmnWj5QZFzLg6Szi9l9ycvoV1m1OP58xkI-DoOu4RdPLgkywaZMujtNRS-c-MVkptzQ_PzDgQl4ouCotC3uBGpStylGk1VPe7wx-b328hAE4J0lEdaCGHg035A2CxEfP-nmEgLMN73F-6WXDT-QBO-0VubW5prOe3xw8T-IuUcGLq6coBdJLScEydfo"/><div class="flex flex-col min-w-0"><span class="font-label-lg text-label-lg text-on-surface font-bold tracking-tight truncate leading-tight">Việc học của tôi</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Danh Sách Bài Tập</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Đăng xuất" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-error hover:bg-error-container/20 transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">logout</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover ml-1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1ZTreXJcBZSg-4MrVVq4rruvQWYE-HkGggQNivu-hZ5Ad-SrTqlPBpuI7Wt2MZl71pc3NI03OOWyOv_A9KA8S2Zq48kSlzuK7O6sjI_prU2LWCLfOIk-Q8candIhG7TCTnJ3eTpeS7-EmRkw0nqoLaettv_85lc5DnyLuWHJPEtd4L4ArZUSUp4sZH1pU9_OqsE6jn1LiNkMwRGOcD6kjntl2-dxgMqccIryurXwUOFV62yXz4Qmc"/></div></div></header><main class="flex-1 flex flex-col relative w-full pt-14 pb-20 bg-surface"><div class="flex flex-col w-full px-margin pb-6 gap-space-md">
+<!-- Sub-header & Quick Stats Banner -->
+<section class="flex items-center justify-between bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">school</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant font-medium">Kế hoạch hôm nay</p>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold tracking-tight">Việc học của tôi</h1>
+</div>
+</div>
+<div class="flex items-center gap-1.5 bg-secondary-container/40 text-on-secondary-container px-space-sm py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wide" id="stat-completed-count">2/4 Đã xong</span>
+</div>
+</section>
+<!-- Quick Add Task Bar -->
+<section class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm">
+<form class="flex items-center gap-space-xs" id="quick-add-form" onsubmit="event.preventDefault(); window.addNewTask();">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline-variant text-[20px] pointer-events-none">edit_note</span>
+<input autocomplete="off" class="w-full h-11 pl-10 pr-3 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all" id="task-input" placeholder="Tên công việc cần học..." type="text"/>
+</div>
+<button aria-label="Thêm công việc" class="h-11 px-space-md bg-primary hover:bg-primary-container active:scale-95 text-on-primary rounded-lg font-label-lg text-label-lg flex items-center gap-1.5 shadow-sm transition-all flex-shrink-0 cursor-pointer" type="submit">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span class="hidden xs:inline">Thêm</span>
+</button>
+</form>
+</section>
+<!-- Filter Segmented Control -->
+<section class="w-full">
+<div aria-label="Bộ lọc công việc" class="flex items-center p-1 bg-surface-container-low rounded-xl shadow-sm gap-1" role="tablist">
+<button aria-selected="true" class="flex-1 py-2 rounded-lg font-label-md text-label-md text-center transition-all duration-200 bg-primary text-on-primary shadow-sm font-semibold cursor-pointer" id="filter-all" onclick="window.setFilter('all')" role="tab" type="button">
+        Tất cả (4)
+      </button>
+<button aria-selected="false" class="flex-1 py-2 rounded-lg font-label-md text-label-md text-center transition-all duration-200 text-on-surface-variant hover:text-on-surface font-medium cursor-pointer" id="filter-pending" onclick="window.setFilter('pending')" role="tab" type="button">
+        Chưa xong (2)
+      </button>
+<button aria-selected="false" class="flex-1 py-2 rounded-lg font-label-md text-label-md text-center transition-all duration-200 text-on-surface-variant hover:text-on-surface font-medium cursor-pointer" id="filter-done" onclick="window.setFilter('done')" role="tab" type="button">
+        Đã xong (2)
+      </button>
+</div>
+</section>
+<!-- Task Card Stream List -->
+<section aria-live="polite" class="flex flex-col gap-space-sm" id="task-list">
+<!-- Task Item 1: Pending -->
+<article class="task-card group flex items-start gap-space-sm p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-200" data-id="1" data-status="pending">
+<button aria-label="Đánh dấu đã hoàn thành Đọc giáo trình Kinh tế vi mô" class="w-6 h-6 rounded-md border-2 border-outline-variant hover:border-primary flex items-center justify-center flex-shrink-0 mt-0.5 transition-colors cursor-pointer bg-transparent" onclick="window.toggleTask(1)" type="button">
+<span class="material-symbols-outlined text-[18px] opacity-0 text-white transition-opacity">check</span>
+</button>
+<div class="flex-1 min-w-0 flex flex-col gap-1">
+<span class="task-title font-body-lg text-body-lg text-on-surface font-medium leading-snug break-words">
+          Đọc giáo trình Kinh tế vi mô trang 45-80
+        </span>
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">book</span> Kinh tế
+          </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary font-medium">
+<span class="material-symbols-outlined text-[13px]">schedule</span> Hôm nay, 17:00
+          </span>
+</div>
+</div>
+<div class="flex items-center gap-1 flex-shrink-0 self-center">
+<button aria-label="Sửa Đọc giáo trình Kinh tế vi mô" class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors cursor-pointer" onclick="window.editTask(1)" title="Sửa công việc" type="button">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button aria-label="Xóa Đọc giáo trình Kinh tế vi mô" class="w-9 h-9 rounded-lg flex items-center justify-center text-error hover:bg-error-container/40 active:scale-95 transition-all cursor-pointer" onclick="window.deleteTask(1)" title="Xóa công việc" type="button">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</article>
+<!-- Task Item 2: Pending -->
+<article class="task-card group flex items-start gap-space-sm p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-200" data-id="2" data-status="pending">
+<button aria-label="Đánh dấu đã hoàn thành Làm bài tập Lập trình Python tuần 6" class="w-6 h-6 rounded-md border-2 border-outline-variant hover:border-primary flex items-center justify-center flex-shrink-0 mt-0.5 transition-colors cursor-pointer bg-transparent" onclick="window.toggleTask(2)" type="button">
+<span class="material-symbols-outlined text-[18px] opacity-0 text-white transition-opacity">check</span>
+</button>
+<div class="flex-1 min-w-0 flex flex-col gap-1">
+<span class="task-title font-body-lg text-body-lg text-on-surface font-medium leading-snug break-words">
+          Làm bài tập Lập trình Python tuần 6
+        </span>
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-fixed/50 text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">code</span> CNTT
+          </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-error font-medium">
+<span class="material-symbols-outlined text-[13px]">warning</span> Gấp: 21:00
+          </span>
+</div>
+</div>
+<div class="flex items-center gap-1 flex-shrink-0 self-center">
+<button aria-label="Sửa bài tập Lập trình Python" class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors cursor-pointer" onclick="window.editTask(2)" title="Sửa công việc" type="button">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button aria-label="Xóa bài tập Lập trình Python" class="w-9 h-9 rounded-lg flex items-center justify-center text-error hover:bg-error-container/40 active:scale-95 transition-all cursor-pointer" onclick="window.deleteTask(2)" title="Xóa công việc" type="button">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</article>
+<!-- Task Item 3: Completed -->
+<article class="task-card group flex items-start gap-space-sm p-space-md rounded-xl bg-surface-container-low shadow-sm transition-all duration-200 opacity-90" data-id="3" data-status="done">
+<button aria-label="Hủy hoàn thành Ôn 30 từ vựng tiếng Anh Ielts" class="w-6 h-6 rounded-md bg-secondary flex items-center justify-center flex-shrink-0 mt-0.5 transition-colors cursor-pointer shadow-sm" onclick="window.toggleTask(3)" type="button">
+<span class="material-symbols-outlined text-[18px] opacity-100 text-white">check</span>
+</button>
+<div class="flex-1 min-w-0 flex flex-col gap-1">
+<span class="task-title font-body-lg text-body-lg text-outline line-through leading-snug break-words">
+          Ôn 30 từ vựng tiếng Anh chủ đề Education
+        </span>
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container/60 text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">done_all</span> Đã xong
+          </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-outline">
+            Ngoại ngữ
+          </span>
+</div>
+</div>
+<div class="flex items-center gap-1 flex-shrink-0 self-center">
+<button aria-label="Sửa việc học tiếng Anh" class="w-9 h-9 rounded-lg flex items-center justify-center text-outline hover:text-primary hover:bg-surface-container transition-colors cursor-pointer" onclick="window.editTask(3)" title="Sửa công việc" type="button">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button aria-label="Xóa việc học tiếng Anh" class="w-9 h-9 rounded-lg flex items-center justify-center text-error/80 hover:text-error hover:bg-error-container/40 active:scale-95 transition-all cursor-pointer" onclick="window.deleteTask(3)" title="Xóa công việc" type="button">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</article>
+<!-- Task Item 4: Completed -->
+<article class="task-card group flex items-start gap-space-sm p-space-md rounded-xl bg-surface-container-low shadow-sm transition-all duration-200 opacity-90" data-id="4" data-status="done">
+<button aria-label="Hủy hoàn thành Nộp đề cương nghiên cứu khoa học" class="w-6 h-6 rounded-md bg-secondary flex items-center justify-center flex-shrink-0 mt-0.5 transition-colors cursor-pointer shadow-sm" onclick="window.toggleTask(4)" type="button">
+<span class="material-symbols-outlined text-[18px] opacity-100 text-white">check</span>
+</button>
+<div class="flex-1 min-w-0 flex flex-col gap-1">
+<span class="task-title font-body-lg text-body-lg text-outline line-through leading-snug break-words">
+          Nộp bản thảo đề cương nghiên cứu khoa học
+        </span>
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container/60 text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">done_all</span> Đã xong
+          </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-outline">
+            Tiểu luận
+          </span>
+</div>
+</div>
+<div class="flex items-center gap-1 flex-shrink-0 self-center">
+<button aria-label="Sửa đề cương" class="w-9 h-9 rounded-lg flex items-center justify-center text-outline hover:text-primary hover:bg-surface-container transition-colors cursor-pointer" onclick="window.editTask(4)" title="Sửa công việc" type="button">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button aria-label="Xóa đề cương" class="w-9 h-9 rounded-lg flex items-center justify-center text-error/80 hover:text-error hover:bg-error-container/40 active:scale-95 transition-all cursor-pointer" onclick="window.deleteTask(4)" title="Xóa công việc" type="button">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</article>
+</section>
+<!-- Empty State Demo (Hidden by default, shown via toggle demo button below) -->
+<section class="hidden flex-col items-center justify-center text-center p-space-xl bg-surface-container-lowest rounded-xl shadow-sm" id="demo-empty-state">
+<div class="w-20 h-20 rounded-full bg-surface-container-high flex items-center justify-center mb-space-sm text-primary">
+<span class="material-symbols-outlined text-[42px]">task_alt</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold">Tuyệt vời!</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs mt-1">
+      Không có công việc nào cần làm! Hãy nghỉ ngơi thư giãn hoặc chuẩn bị bài học mới.
+    </p>
+<button class="mt-space-md px-space-md py-2.5 bg-primary text-on-primary rounded-lg font-label-lg text-label-lg font-semibold active:scale-95 transition-transform" onclick="document.getElementById('task-input').focus()" type="button">
+      + Thêm bài học mới
+    </button>
+</section>
+<!-- Loading State Demo (Hidden by default, shown via state switch) -->
+<section class="hidden flex-col gap-space-sm" id="demo-loading-state">
+<div class="flex items-center gap-space-sm p-space-md rounded-xl bg-surface-container-lowest shadow-sm animate-pulse">
+<div class="w-6 h-6 rounded-md bg-surface-container-high flex-shrink-0"></div>
+<div class="flex-1 flex flex-col gap-2">
+<div class="h-4 bg-surface-container-high rounded w-4/5"></div>
+<div class="h-3 bg-surface-container-high rounded w-1/3"></div>
+</div>
+<div class="w-16 h-8 bg-surface-container-high rounded-lg flex-shrink-0"></div>
+</div>
+<div class="flex items-center gap-space-sm p-space-md rounded-xl bg-surface-container-lowest shadow-sm animate-pulse">
+<div class="w-6 h-6 rounded-md bg-surface-container-high flex-shrink-0"></div>
+<div class="flex-1 flex flex-col gap-2">
+<div class="h-4 bg-surface-container-high rounded w-3/5"></div>
+<div class="h-3 bg-surface-container-high rounded w-1/4"></div>
+</div>
+<div class="w-16 h-8 bg-surface-container-high rounded-lg flex-shrink-0"></div>
+</div>
+<div class="flex items-center justify-center gap-2 py-space-sm text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[20px] animate-spin">progress_activity</span>
+<span>Đang đồng bộ dữ liệu học tập...</span>
+</div>
+</section>
+<!-- Error State Alert Card -->
+<section class="flex items-center justify-between p-space-md bg-error-container/40 rounded-xl" id="demo-error-state">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-full bg-error-container text-error flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">error</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-lg text-label-lg font-bold text-on-error-container leading-tight">Lỗi tải dữ liệu</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Không thể kết nối máy chủ bài tập.</p>
+</div>
+</div>
+<button class="px-space-sm py-1.5 bg-surface-container-lowest hover:bg-surface-container text-error font-label-sm text-label-sm font-semibold rounded-lg shadow-sm flex items-center gap-1 active:scale-95 transition-all flex-shrink-0 cursor-pointer" onclick="window.retryLoad()" type="button">
+<span class="material-symbols-outlined text-[16px]">refresh</span> Thử lại
+    </button>
+</section>
+<!-- Developer State Switcher (To test Empty, Loading, and Normal state in Mobile Preview) -->
+<section class="mt-space-xs p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Chế độ xem mẫu:</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Tương tác nhanh</span>
+</div>
+<div class="grid grid-cols-3 gap-1">
+<button class="py-1 px-2 rounded bg-surface-container-lowest text-on-surface font-label-sm text-label-sm font-medium shadow-sm hover:text-primary cursor-pointer text-center" onclick="window.showNormalView()" type="button">
+        Danh sách
+      </button>
+<button class="py-1 px-2 rounded bg-surface-container-lowest text-on-surface font-label-sm text-label-sm font-medium shadow-sm hover:text-primary cursor-pointer text-center" onclick="window.showEmptyView()" type="button">
+        Trạng thái Rỗng
+      </button>
+<button class="py-1 px-2 rounded bg-surface-container-lowest text-on-surface font-label-sm text-label-sm font-medium shadow-sm hover:text-primary cursor-pointer text-center" onclick="window.showLoadingView()" type="button">
+        Đang tải...
+      </button>
+</div>
+</section>
+</div>
+<script>
+(function() {
+  let currentFilter = 'all';
+
+  window.setFilter = function(filter) {
+    currentFilter = filter;
+    const btnAll = document.getElementById('filter-all');
+    const btnPending = document.getElementById('filter-pending');
+    const btnDone = document.getElementById('filter-done');
+
+    const activeClasses = ['bg-primary', 'text-on-primary', 'shadow-sm', 'font-semibold'];
+    const inactiveClasses = ['text-on-surface-variant', 'font-medium'];
+
+    [btnAll, btnPending, btnDone].forEach(btn => {
+      btn.classList.remove(...activeClasses);
+      btn.classList.add(...inactiveClasses);
+      btn.setAttribute('aria-selected', 'false');
+    });
+
+    const activeBtn = filter === 'all' ? btnAll : (filter === 'pending' ? btnPending : btnDone);
+    activeBtn.classList.remove(...inactiveClasses);
+    activeBtn.classList.add(...activeClasses);
+    activeBtn.setAttribute('aria-selected', 'true');
+
+    const cards = document.querySelectorAll('.task-card');
+    cards.forEach(card => {
+      const status = card.getAttribute('data-status');
+      if (filter === 'all' || status === filter) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  };
+
+  window.toggleTask = function(id) {
+    const card = document.querySelector(`.task-card[data-id="${id}"]`);
+    if (!card) return;
+
+    const isPending = card.getAttribute('data-status') === 'pending';
+    const btn = card.querySelector('button');
+    const checkIcon = btn.querySelector('.material-symbols-outlined');
+    const title = card.querySelector('.task-title');
+
+    if (isPending) {
+      card.setAttribute('data-status', 'done');
+      card.classList.remove('bg-surface-container-lowest');
+      card.classList.add('bg-surface-container-low', 'opacity-90');
+      btn.classList.remove('border-2', 'border-outline-variant', 'hover:border-primary', 'bg-transparent');
+      btn.classList.add('bg-secondary', 'shadow-sm');
+      checkIcon.classList.remove('opacity-0');
+      checkIcon.classList.add('opacity-100');
+      title.classList.add('line-through', 'text-outline');
+      title.classList.remove('text-on-surface', 'font-medium');
+    } else {
+      card.setAttribute('data-status', 'pending');
+      card.classList.add('bg-surface-container-lowest');
+      card.classList.remove('bg-surface-container-low', 'opacity-90');
+      btn.classList.add('border-2', 'border-outline-variant', 'hover:border-primary', 'bg-transparent');
+      btn.classList.remove('bg-secondary', 'shadow-sm');
+      checkIcon.classList.remove('opacity-100');
+      checkIcon.classList.add('opacity-0');
+      title.classList.remove('line-through', 'text-outline');
+      title.classList.add('text-on-surface', 'font-medium');
+    }
+
+    window.updateCounters();
+    window.setFilter(currentFilter);
+  };
+
+  window.addNewTask = function() {
+    const input = document.getElementById('task-input');
+    const text = input.value.trim();
+    if (!text) return;
+
+    const newId = Date.now();
+    const list = document.getElementById('task-list');
+
+    const article = document.createElement('article');
+    article.className = 'task-card group flex items-start gap-space-sm p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-200';
+    article.setAttribute('data-status', 'pending');
+    article.setAttribute('data-id', newId);
+
+    article.innerHTML = `
+      <button 
+        type="button" 
+        onclick="window.toggleTask(${newId})" 
+        class="w-6 h-6 rounded-md border-2 border-outline-variant hover:border-primary flex items-center justify-center flex-shrink-0 mt-0.5 transition-colors cursor-pointer bg-transparent"
+        aria-label="Đánh dấu hoàn thành"
+      >
+        <span class="material-symbols-outlined text-[18px] opacity-0 text-white transition-opacity">check</span>
+      </button>
+
+      <div class="flex-1 min-w-0 flex flex-col gap-1">
+        <span class="task-title font-body-lg text-body-lg text-on-surface font-medium leading-snug break-words">
+          ${escapeHtml(text)}
+        </span>
+        <div class="flex items-center gap-space-xs flex-wrap">
+          <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-semibold">
+            <span class="material-symbols-outlined text-[13px]">school</span> Tự học
+          </span>
+          <span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary font-medium">
+            <span class="material-symbols-outlined text-[13px]">schedule</span> Mới tạo
+          </span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-1 flex-shrink-0 self-center">
+        <button 
+          type="button" 
+          onclick="window.editTask(${newId})" 
+          class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors cursor-pointer"
+          title="Sửa công việc"
+        >
+          <span class="material-symbols-outlined text-[20px]">edit</span>
+        </button>
+        <button 
+          type="button" 
+          onclick="window.deleteTask(${newId})" 
+          class="w-9 h-9 rounded-lg flex items-center justify-center text-error hover:bg-error-container/40 active:scale-95 transition-all cursor-pointer"
+          title="Xóa công việc"
+        >
+          <span class="material-symbols-outlined text-[20px]">delete</span>
+        </button>
+      </div>
+    `;
+
+    list.insertBefore(article, list.firstChild);
+    input.value = '';
+    window.updateCounters();
+    window.setFilter(currentFilter);
+  };
+
+  window.deleteTask = function(id) {
+    const card = document.querySelector(`.task-card[data-id="${id}"]`);
+    if (card) {
+      card.remove();
+      window.updateCounters();
+    }
+  };
+
+  window.editTask = function(id) {
+    const card = document.querySelector(`.task-card[data-id="${id}"]`);
+    if (!card) return;
+    const titleEl = card.querySelector('.task-title');
+    const currentText = titleEl.textContent.trim();
+    const newText = prompt('Chỉnh sửa tên công việc học tập:', currentText);
+    if (newText && newText.trim() !== '') {
+      titleEl.textContent = newText.trim();
+    }
+  };
+
+  window.updateCounters = function() {
+    const cards = document.querySelectorAll('.task-card');
+    const total = cards.length;
+    let pendingCount = 0;
+    let doneCount = 0;
+
+    cards.forEach(card => {
+      if (card.getAttribute('data-status') === 'done') {
+        doneCount++;
+      } else {
+        pendingCount++;
+      }
+    });
+
+    const statEl = document.getElementById('stat-completed-count');
+    if (statEl) {
+      statEl.textContent = `${doneCount}/${total} Đã xong`;
+    }
+
+    const btnAll = document.getElementById('filter-all');
+    const btnPending = document.getElementById('filter-pending');
+    const btnDone = document.getElementById('filter-done');
+
+    if (btnAll) btnAll.textContent = `Tất cả (${total})`;
+    if (btnPending) btnPending.textContent = `Chưa xong (${pendingCount})`;
+    if (btnDone) btnDone.textContent = `Đã xong (${doneCount})`;
+  };
+
+  window.showNormalView = function() {
+    document.getElementById('task-list').classList.remove('hidden');
+    document.getElementById('demo-empty-state').classList.add('hidden');
+    document.getElementById('demo-loading-state').classList.add('hidden');
+  };
+
+  window.showEmptyView = function() {
+    document.getElementById('task-list').classList.add('hidden');
+    document.getElementById('demo-empty-state').classList.remove('hidden');
+    document.getElementById('demo-empty-state').classList.add('flex');
+    document.getElementById('demo-loading-state').classList.add('hidden');
+  };
+
+  window.showLoadingView = function() {
+    document.getElementById('task-list').classList.add('hidden');
+    document.getElementById('demo-empty-state').classList.add('hidden');
+    document.getElementById('demo-loading-state').classList.remove('hidden');
+    document.getElementById('demo-loading-state').classList.add('flex');
+  };
+
+  window.retryLoad = function() {
+    const errCard = document.getElementById('demo-error-state');
+    errCard.classList.add('opacity-50');
+    setTimeout(() => {
+      errCard.classList.remove('opacity-50');
+      alert('Đã kết nối lại thành công!');
+    }, 600);
+  };
+
+  function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
+})();
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-1px_12px_rgba(0,0,0,0.05)]" data-active-classes="text-primary font-semibold"><div class="flex justify-around items-center h-16 px-space-xs max-w-md mx-auto"><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] h-12 text-on-surface-variant hover:text-primary transition-all rounded-lg" data-path="danh-sach-bai-tap" href="#"><span class="material-symbols-outlined text-[24px]">checklist</span><span class="font-label-sm text-label-sm">Bài học</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] h-12 text-on-surface-variant hover:text-primary transition-all rounded-lg" data-path="thoi-khoa-bieu" href="#"><span class="material-symbols-outlined text-[24px]">calendar_today</span><span class="font-label-sm text-label-sm">Lịch biểu</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] h-12 text-on-surface-variant hover:text-primary transition-all rounded-lg" data-path="tien-do-hoc-tap" href="#"><span class="material-symbols-outlined text-[24px]">analytics</span><span class="font-label-sm text-label-sm">Tiến độ</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] h-12 text-on-surface-variant hover:text-primary transition-all rounded-lg" data-path="ca-nhan" href="#"><span class="material-symbols-outlined text-[24px]">person</span><span class="font-label-sm text-label-sm">Cá nhân</span></a></div></nav></body></html>
