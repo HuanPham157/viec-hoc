@@ -143,6 +143,7 @@ export function TaskDashboard() {
 
     let isActive = true;
     let authStateChanged = false;
+    let loadTasksTimer: ReturnType<typeof setTimeout> | undefined;
     const supabase = getSupabaseBrowserClient();
 
     const {
@@ -161,6 +162,12 @@ export function TaskDashboard() {
         setFilter("all");
         setIsLoading(false);
         router.replace("/login");
+      } else {
+        if (loadTasksTimer) clearTimeout(loadTasksTimer);
+        loadTasksTimer = setTimeout(() => {
+          loadTasksTimer = undefined;
+          if (isActive) void loadTasks();
+        }, 0);
       }
     });
 
@@ -192,6 +199,7 @@ export function TaskDashboard() {
 
     return () => {
       isActive = false;
+      if (loadTasksTimer) clearTimeout(loadTasksTimer);
       subscription.unsubscribe();
     };
   }, [isSupabaseConfigured, loadTasks, redirectToLogin, router]);
