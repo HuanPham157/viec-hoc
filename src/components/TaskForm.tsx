@@ -3,20 +3,27 @@
 import { useState, type FormEvent } from "react";
 import { Icon } from "./Icon";
 
-export function TaskForm({ onAdd }: { onAdd: (title: string) => void }) {
+export function TaskForm({
+  onAdd,
+  isBusy,
+}: {
+  onAdd: (title: string) => Promise<boolean>;
+  isBusy: boolean;
+}) {
   const [title, setTitle] = useState("");
   const [error, setError] = useState("");
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const cleanTitle = title.trim();
     if (cleanTitle.length < 1 || cleanTitle.length > 120) {
       setError("Tên công việc phải dài từ 1 đến 120 ký tự.");
       return;
     }
-    onAdd(cleanTitle);
-    setTitle("");
-    setError("");
+    if (await onAdd(cleanTitle)) {
+      setTitle("");
+      setError("");
+    }
   }
 
   return (
@@ -38,6 +45,7 @@ export function TaskForm({ onAdd }: { onAdd: (title: string) => void }) {
                 error ? "ring-2 ring-red-300" : ""
               }`}
               id="task-title"
+              disabled={isBusy}
               onChange={(event) => {
                 setTitle(event.target.value);
                 if (error) setError("");
@@ -54,7 +62,8 @@ export function TaskForm({ onAdd }: { onAdd: (title: string) => void }) {
         </div>
         <button
           aria-label="Thêm công việc"
-          className="flex h-12 w-12 shrink-0 items-center justify-center gap-2 self-start rounded-xl bg-[#004ac6] px-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#003ea8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004ac6] sm:h-14 sm:w-auto sm:px-5"
+          className="flex h-12 w-12 shrink-0 items-center justify-center gap-2 self-start rounded-xl bg-[#004ac6] px-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#003ea8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004ac6] disabled:cursor-not-allowed disabled:opacity-60 sm:h-14 sm:w-auto sm:px-5"
+          disabled={isBusy}
           type="submit"
         >
           <Icon name="plus" className="h-5 w-5" />

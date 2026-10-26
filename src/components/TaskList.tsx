@@ -8,9 +8,10 @@ type TaskListProps = {
   tasks: Task[];
   filter: TaskFilter;
   onFilterChange: (filter: TaskFilter) => void;
-  onToggle: (id: string) => void;
-  onDelete: (id: string, title: string) => void;
-  onEdit: (id: string, title: string) => void;
+  onToggle: (id: string) => Promise<boolean>;
+  onDelete: (id: string, title: string) => Promise<boolean>;
+  onEdit: (id: string, title: string) => Promise<boolean>;
+  isBusy: boolean;
 };
 
 const filterOptions: { id: TaskFilter; label: string }[] = [
@@ -26,6 +27,7 @@ export function TaskList({
   onToggle,
   onDelete,
   onEdit,
+  isBusy,
 }: TaskListProps) {
   const pendingCount = tasks.filter((task) => !task.is_done).length;
   const completedCount = tasks.length - pendingCount;
@@ -53,12 +55,13 @@ export function TaskList({
             return (
               <button
                 aria-pressed={filter === option.id}
-                className={`flex flex-1 items-center justify-center gap-1.5 rounded-full px-3 py-2 text-xs font-medium transition sm:flex-none sm:px-4 sm:text-sm ${
+                className={`flex flex-1 items-center justify-center gap-1.5 rounded-full px-3 py-2 text-xs font-medium transition disabled:cursor-not-allowed disabled:opacity-60 sm:flex-none sm:px-4 sm:text-sm ${
                   filter === option.id
                     ? "bg-[#004ac6] text-white shadow-sm"
                     : "text-[#0b1c30] hover:bg-white/70"
                 }`}
                 key={option.id}
+                disabled={isBusy}
                 onClick={() => onFilterChange(option.id)}
                 type="button"
               >
@@ -78,7 +81,7 @@ export function TaskList({
         </div>
         <p className="flex items-center gap-1.5 text-xs text-slate-600">
           <Icon name="shield" className="h-4 w-4 text-[#00714d]" />
-          Dữ liệu mẫu chỉ lưu trong phiên này
+          Công việc được đồng bộ với tài khoản của bạn
         </p>
       </div>
 
@@ -90,6 +93,7 @@ export function TaskList({
               onDelete={onDelete}
               onEdit={onEdit}
               onToggle={onToggle}
+              isBusy={isBusy}
               task={task}
             />
           ))}

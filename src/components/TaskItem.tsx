@@ -6,26 +6,34 @@ import type { Task } from "./task-types";
 
 type TaskItemProps = {
   task: Task;
-  onToggle: (id: string) => void;
-  onDelete: (id: string, title: string) => void;
-  onEdit: (id: string, title: string) => void;
+  onToggle: (id: string) => Promise<boolean>;
+  onDelete: (id: string, title: string) => Promise<boolean>;
+  onEdit: (id: string, title: string) => Promise<boolean>;
+  isBusy: boolean;
 };
 
-export function TaskItem({ task, onToggle, onDelete, onEdit }: TaskItemProps) {
+export function TaskItem({
+  task,
+  onToggle,
+  onDelete,
+  onEdit,
+  isBusy,
+}: TaskItemProps) {
   const [isEditing, setIsEditing] = useState(false);
   const [title, setTitle] = useState(task.title);
   const [error, setError] = useState("");
 
-  function handleEdit(event: FormEvent<HTMLFormElement>) {
+  async function handleEdit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const cleanTitle = title.trim();
     if (cleanTitle.length < 1 || cleanTitle.length > 120) {
       setError("Tên công việc phải dài từ 1 đến 120 ký tự.");
       return;
     }
-    onEdit(task.id, cleanTitle);
-    setError("");
-    setIsEditing(false);
+    if (await onEdit(task.id, cleanTitle)) {
+      setError("");
+      setIsEditing(false);
+    }
   }
 
   return (
@@ -40,12 +48,13 @@ export function TaskItem({ task, onToggle, onDelete, onEdit }: TaskItemProps) {
           task.is_done ? `Đánh dấu chưa xong: ${task.title}` : `Đánh dấu đã xong: ${task.title}`
         }
         aria-pressed={task.is_done}
-        className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-md border-2 transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004ac6] sm:mt-0 ${
+        className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-md border-2 transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004ac6] disabled:cursor-not-allowed disabled:opacity-60 sm:mt-0 ${
           task.is_done
             ? "border-[#00714d] bg-[#00714d] text-white"
             : "border-[#c3c6d7] bg-white text-transparent hover:border-[#004ac6]"
         }`}
-        onClick={() => onToggle(task.id)}
+        disabled={isBusy}
+        onClick={() => void onToggle(task.id)}
         type="button"
       >
         {task.is_done && <Icon name="check" className="h-4 w-4" />}
@@ -64,6 +73,7 @@ export function TaskItem({ task, onToggle, onDelete, onEdit }: TaskItemProps) {
                 autoFocus
                 className="min-w-0 flex-1 rounded-lg border border-blue-200 bg-white px-2 py-1 text-sm outline-none focus:ring-2 focus:ring-blue-100"
                 id={`edit-${task.id}`}
+                disabled={isBusy}
                 onChange={(event) => {
                   setTitle(event.target.value);
                   if (error) setError("");
@@ -71,14 +81,16 @@ export function TaskItem({ task, onToggle, onDelete, onEdit }: TaskItemProps) {
                 value={title}
               />
               <button
-                className="rounded-lg bg-[#004ac6] px-3 py-1 text-xs font-semibold text-white hover:bg-[#003ea8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004ac6]"
+                className="rounded-lg bg-[#004ac6] px-3 py-1 text-xs font-semibold text-white hover:bg-[#003ea8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004ac6] disabled:cursor-not-allowed disabled:opacity-60"
+                disabled={isBusy}
                 type="submit"
               >
                 Lưu
               </button>
               <button
                 aria-label="Hủy chỉnh sửa"
-                className="rounded-lg p-1 text-slate-500 hover:bg-slate-100 focus-visible:outline-2 focus-visible:outline-[#004ac6]"
+                className="rounded-lg p-1 text-slate-500 hover:bg-slate-100 focus-visible:outline-2 focus-visible:outline-[#004ac6] disabled:cursor-not-allowed disabled:opacity-60"
+                disabled={isBusy}
                 onClick={() => {
                   setTitle(task.title);
                   setError("");
@@ -128,7 +140,8 @@ export function TaskItem({ task, onToggle, onDelete, onEdit }: TaskItemProps) {
       <div className="flex shrink-0 items-center gap-1 sm:gap-2">
         <button
           aria-label={`Sửa ${task.title}`}
-          className="rounded-lg p-2 text-slate-600 transition hover:bg-blue-50 hover:text-[#004ac6] focus-visible:outline-2 focus-visible:outline-[#004ac6]"
+          className="rounded-lg p-2 text-slate-600 transition hover:bg-blue-50 hover:text-[#004ac6] focus-visible:outline-2 focus-visible:outline-[#004ac6] disabled:cursor-not-allowed disabled:opacity-60"
+          disabled={isBusy}
           onClick={() => {
             setTitle(task.title);
             setError("");
@@ -140,8 +153,9 @@ export function TaskItem({ task, onToggle, onDelete, onEdit }: TaskItemProps) {
         </button>
         <button
           aria-label={`Xóa ${task.title}`}
-          className="rounded-lg p-2 text-[#ba1a1a] transition hover:bg-red-50 focus-visible:outline-2 focus-visible:outline-[#ba1a1a]"
-          onClick={() => onDelete(task.id, task.title)}
+          className="rounded-lg p-2 text-[#ba1a1a] transition hover:bg-red-50 focus-visible:outline-2 focus-visible:outline-[#ba1a1a] disabled:cursor-not-allowed disabled:opacity-60"
+          disabled={isBusy}
+          onClick={() => void onDelete(task.id, task.title)}
           type="button"
         >
           <Icon name="trash" className="h-5 w-5" />
